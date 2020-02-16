@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>公众号关注： IT小凡</title>
+		
+		<script type="text/javascript" src="/bootstrap/js/jquery-1.10.2.min.js" ></script>
+		<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+		
+		<style type="text/css">
+			@import url("/bootstrap/css/bootstrap.min.css");
+		</style>
+
+	</head>
+	<body>
+
+<div class="container" style="margin-top: 30px;margin-bottom: 350px;">
+	
+	<div align="center">
+		<div class="btn-group btn-group-lg" role="group" aria-label="...">
+			<a href="/index.html" type="button" class="btn btn-default">购买商品</a>
+			<a href="/information.html" type="button" class="btn btn-default">订单信息</a>
+		</div>
+	</div>
+	
+	<div class="col-sm-6 col-sm-offset-3">
+	
+	<form class="form-horizontal" action="/paymethod" method="post">
+		
+		<div class="form-group" style="margin-top: 15px;">
+		<label for="username" class="col-sm-2 control-label">账号：</label>
+		<div class="col-sm-10">
+		  <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名" required="required">
+		</div>
+		</div>
+
+		<div class="form-group" style="margin-top: 15px;">
+		<label for="commodity" class="col-sm-2 control-label">商品：</label>
+		<div class="col-sm-10">
+			<select class="form-control" id="commodity" name="commodity">
+			  <option>商品1</option>
+			  <option>商品2</option>
+			  <option>商品3</option>
+			</select>
+		</div>
+		</div>
+			  
+		<div id="tip" class="alert alert-success" role="alert" style="text-align: center;font-weight: bold;font-size: 16px;margin-top: 15px;">共需要10元</div>
+
+		<div align="center">
+		  <button type="submit" class="btn btn-primary">立即付款</button>
+		</div>
+	  
+	</form>
+	
+	</div>
+	
+</div>
+
+
+	<script type="text/javascript">
+		$('#commodity').change(function() {
+			var tip = document.getElementById("tip");
+			if($(this).val() == '商品1') {
+				tip.innerHTML = '共需要10元';
+			}else if($(this).val() == '商品2') {
+				tip.innerHTML = '共需要20元';
+			}else {
+				tip.innerHTML = '共需要30元';
+			}
+		});
+	</script>
+
+		
+	</body>
+</html>

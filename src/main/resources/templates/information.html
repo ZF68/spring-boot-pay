@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>公众号关注： IT小凡</title>
+
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        @import url("/bootstrap/css/bootstrap.min.css");
+    </style>
+
+</head>
+<body>
+
+<div style="margin-top: 30px;margin-bottom: 350px;">
+
+    <div align="center">
+        <div class="btn-group btn-group-lg" role="group" aria-label="...">
+            <a href="/index.html" type="button" class="btn btn-default">购买商品</a>
+            <a href="/information.html" type="button" class="btn btn-default">订单信息</a>
+        </div>
+    </div>
+
+
+    <div class="container" style="margin-top: 15px;">
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th style="text-align: center">订单ID号</th>
+                    <th style="text-align: center">用户名</th>
+                    <th style="text-align: center">商品名称</th>
+                    <th style="text-align: center">支付宝交易号</th>
+                    <th style="text-align: center">商户订单号</th>
+                    <th style="text-align: center">付款金额</th>
+                    <th style="text-align: center">是否完成付款</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="orderallOne:${orderall}">
+                    <th style="text-align: center">[[${orderallOne.id}]]</th>
+                    <th style="text-align: center">[[${orderallOne.username}]]</th>
+                    <th style="text-align: center">[[${orderallOne.commodity}]]</th>
+                    <th style="text-align: center">[[${orderallOne.trade_no}]]</th>
+                    <th style="text-align: center">[[${orderallOne.out_trade_no}]]</th>
+                    <th style="text-align: center;color: green;">[[${orderallOne.money}]]</th>
+                    <th style="text-align: center;color: green;" th:if="${orderallOne.play==1}">已付款</th>
+                    <th style="text-align: center;color: red;" th:if="${orderallOne.play!=1}">未付款</th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

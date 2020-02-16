@@ -1,0 +1,16 @@
+spring:
+    datasource:
+      username: root
+      password: root
+      url: jdbc:mysql://127.0.0.1:3306/alipay?serverTimezone=GMT%2B8&characterEncoding=utf-8
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+      hibernate:
+        #ddl-auto即定义数据表生成的策略     update更新或者创建数据表结构
+        ddl-auto: update
+      #    控制台显示SQL
+      show-sql: true
+
+server:
+  port: 8080
